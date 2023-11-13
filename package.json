@@ -1,0 +1,32 @@
+{
+  "name": "money-market",
+  "version": "0.1.0",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "node:avax": "hardhat node --fork http://avalanche02.ct.romenet.io:9650/ext/bc/C/rpc",
+    "node:kava": "hardhat node --fork https://evm.testnet.kava.io",
+    "deploy:local": "hardhat run script/deploy-test.ts --network localhost",
+    "deploy:evmos": "hardhat run script/deploy-test.ts --network evmostest",    
+    "deploy:kava": "hardhat run script/deploy-test.ts --network kavatest",
+    "manipulate:evmos": "hardhat run script/networkManipulation.ts --network evmostest",
+    "manipulate:kava": "hardhat run script/networkManipulation.ts --network kavatest"
+  },
+  "devDependencies": {
+    "@defi-wonderland/smock": "^2.3.4",
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "@quadrata/contracts": "^1.0.3",
+    "bignumber.js": "9.0.0",
+    "hardhat": "^2.14.0"
+  },
+  "dependencies": {
+    "@chainlink/contracts": "^0.5.1",
+    "@openzeppelin/contracts": "^4.9.0",
+    "@openzeppelin/contracts-upgradeable": "^4.9.0",
+    "@openzeppelin/hardhat-upgrades": "^1.27.0"
+  },
+  "resolutions": {
+    "scrypt.js": "https://registry.npmjs.org/@compound-finance/ethereumjs-wallet/-/ethereumjs-wallet-0.6.3.tgz",
+    "**/ganache-core": "github:compound-finance/ganache-core.git#jflatow/unbreak-fork"
+  }
+}
